@@ -6,17 +6,11 @@ const counterSlice = createSlice({
 	name: "counter",
 	initialState: initialCounterState,
 	reducers: {
-		increment(state) {
-			state.counter++;
+		increment(state, action) {
+			state.counter += !isNaN(action.payload) ? action.payload : 1;
 		},
-		decrement(state) {
-			state.counter--;
-		},
-		incrementByValue(state, action) {
-			state.counter += action.payload;
-		},
-		decrementByValue(state, action) {
-			state.counter -= action.payload;
+		decrement(state, action) {
+			state.counter -= !isNaN(action.payload) ? action.payload : 1;
 		},
 	},
 });
