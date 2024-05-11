@@ -4,7 +4,7 @@ import { counterActions } from "../store/counterSlice";
 
 const Counter = () => {
   const toggleCounterHandler = () => {
-    dispatch({ type: "toggle" });
+    dispatch(counterActions.toggle());
   }
   // automatically subscribes to the data and re-renders the component when changed.
   const counter = useSelector(state=>state.counter.counter);

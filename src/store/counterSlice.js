@@ -12,6 +12,9 @@ const counterSlice = createSlice({
 		decrement(state, action) {
 			state.counter -= !isNaN(action.payload) ? action.payload : 1;
 		},
+		toggle(state) {
+			state.showCounter = !state.showCounter;
+		}
 	},
 });
 
